@@ -24,6 +24,7 @@ component
 	this.mappings[ "/model" ] = (this.baseDirectory & "model/");
 	this.mappings[ "/view" ] = (this.baseDirectory & "view/");
 	this.mappings[ "/controller" ] = (this.baseDirectory & "controller/");
+	this.mappings[ "/layout" ] = (this.baseDirectory & "layout/");
 	
 	
 	// I initialize the application.
@@ -49,7 +50,8 @@ component
 		// and access data. While services can have references to 
 		// other services, each service may only talk to its own 
 		// gateway.
-		application.accountService = new model.accountService( util, application.accountGateway );
+		application.accountService = new model.AccountService( util, application.accountGateway );
+		application.securityService = new model.SecurityService( util, application.accountService );
 
 		// Return true so the application can be processed.
 		return( true );
@@ -59,7 +61,10 @@ component
 	
 	// I initialize the user's web session.
 	function onSessionStart(){
-		// ...
+		
+		// Create a default, authorized user.
+		session.user = application.securityService.createUser();
+
 	}
 	
 	
@@ -69,11 +74,34 @@ component
 		// Check to see if the application needs to be refreshed.
 		if (structKeyExists( url, "init" )){
 			
-			// Manually invoke the application reset.
+			// Manually invoke the application and session reset.
 			this.onApplicationStart();
+			this.onSessionStart();
 			
 		}
-		
+
+		// Param the event variable - for this demo, this will always
+		// be expected in the URL scope (even if the current request)
+		// is a form scope. The event value is meant to be a dot-
+		// delimited list of routes and sub-routes.
+		param name="url.event" type="string" default="";
+
+		// Define the event value in the request. By default, it will
+		// have no values so that they can be overridden with defaults
+		// as the request is processed.
+		request.event = [];
+
+		// If the event is defined, then let's split it based on the 
+		// dot delimiter.
+		if (len( trim( url.event ) )){
+
+			// This will contain at least one routable value.
+			request.event = listToArray( trim( url.event ), "." );
+
+		}
+
+		// Define the template
+
 		// Return true so the page can be processed.
 		return( true );
 	

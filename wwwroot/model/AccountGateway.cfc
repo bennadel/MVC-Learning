@@ -5,13 +5,13 @@ component
 	{
 
 
-	// The rough structure of the Account is as such:
+	// The working structure of the Account is as follows:
 	//
 	// - id
 	// - name
 	// - email
 	// - password
-	// - lastLogin
+	// - lastLogin (nullable)
 
 	
 	// I return an initialized component.
@@ -22,6 +22,11 @@ component
 		
 		// Create our cache of accounts.
 		variables.accounts = [];
+
+		// Create an internal primary key for the accounts table. As
+		// we create new accounts, each one will get a new, unique ID
+		// value based on this primary key.
+		variables.primaryKey = 0;
 		
 		// Return this object reference.
 		return( this );
