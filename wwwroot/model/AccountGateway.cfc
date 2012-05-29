@@ -5,22 +5,25 @@ component
 	{
 
 
-	// The working structure of the Account is as follows:
-	//
-	// - id
-	// - name
-	// - email
-	// - password
-	// - lastLogin (nullable)
-
-	
 	// I return an initialized component.
 	function init( Any util ){
 		
 		// Store a reference to our utility library.
 		variables.util = util;
 		
-		// Create our cache of accounts.
+		// Create our cache of accounts. The account data will be 
+		// stored as simple structs:
+		//
+		// - ID
+		// - Name
+		// - Email
+		// - Password
+		// - LastLogin
+		//
+		// When the data is being stored or retreived, this raw data
+		// will be translated into domain entities. I am doing this so
+		// that I don't accidentally break encapsulation by passing 
+		// around referencing to the underyling data.
 		variables.accounts = [];
 
 		// Create an internal primary key for the accounts table. As
@@ -34,26 +37,47 @@ component
 	}
 	
 	
-	// I get the account with the given credentials.
+	// I get the accounts with the given credentials.
 	function getByCredentials( String email, String password ){
 		
-		// Get the first matching instance.
-		var account = variables.util.arrayFirstInstance(
+		// Filter the records based on email and password.
+		var accounts = arrayFilter(
+			variables.accounts,
 			function( account ){
 				
 				// Return true if both the email and password match
 				// the given values.
 				return(
-					(email == account.email) &&
-					(password == account.password)
+					(account.email == email) &&
+					(account.password == password)
 				);
 				
 			}
 		);
 		
-		// Return the instance (or NULL).
-		return( account );
+		// Return the matching accounts (may be empty).
+		return( this._wrapEntities( accounts ) );
 		
+	}
+
+
+	// I get the account with the given ID.
+	function getByID( Numeric id ){
+
+		// Filter the records based on ID.
+		var accounts = arrayFilter(
+			variables.accounts,
+			function( account ){
+				
+				// Return true if both the ID matches.
+				return( account.id == id );
+				
+			}
+		);
+		
+		// Return the matching accounts (may be empty).
+		return( this._wrapEntities( accounts ) );
+
 	}
 	
 	
@@ -61,8 +85,9 @@ component
 	// an existing account.
 	function isEmailTaken( String email ){
 		
-		// Find an account with the given name.
-		var exists = arrayFind(
+		// Find an account with the given name. This will return the
+		// index of the matching record (or zero if not found).
+		var accountExists = arrayFind(
 			variables.accounts,
 			function( account ){
 			
@@ -73,14 +98,52 @@ component
 		);
 		
 		// Return true if the account with the email was found.
-		return( exists );
+		return( accountExists );
 		
 	}
 	
 	
 	// I save the given account.
-	function save(){
+	function save( Any account ){
 		
+		// Check to see if the account has already been persisted. 
+		// In this case, if it has an ID, it has been persisted.
+		if (account.getID()){
+
+			// The account entity is being updated.
+
+		} else {
+
+			// The account entity is being created.
+			
+
+		}
+
+	}
+
+
+	// I wrap the given array of raw account data as Account entities.
+	function _wrapEntities( accounts ){
+
+		var entities = [];
+
+		for (var account in accounts){
+
+			arrayAppend(
+				entities,
+				new Account(
+					id = account.id,
+					name = account.name,
+					email = account.email,
+					password = account.password,
+					lastLogin = account.lastLogin
+				)
+			);
+
+		}
+
+		return( entities );
+
 	}
 	
 		

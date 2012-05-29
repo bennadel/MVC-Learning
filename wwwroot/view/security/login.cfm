@@ -1,7 +1,10 @@
 
-<cfset request.title = "Please Login" />
+<!--- Param the view data for the rendering. --->
+<cfparam name="request.viewData.email" type="string" default="" />
 
-<cfsavecontent variable="request.primaryContent">
+
+<!--- Populate the primary content to be used in the layout. --->
+<cfsavecontent variable="request.viewData.primaryContent">
 	<cfoutput>
 
 
@@ -11,7 +14,7 @@
 
 			<p>
 				Email: 
-				<input type="text" name="email" value="#htmlEditFormat( form.email )#" />
+				<input type="text" name="email" value="#htmlEditFormat( request.viewData.email )#" />
 			</p>
 
 			<p>

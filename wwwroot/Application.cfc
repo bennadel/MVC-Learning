@@ -80,27 +80,33 @@ component
 			
 		}
 
-		// Param the event variable - for this demo, this will always
-		// be expected in the URL scope (even if the current request)
-		// is a form scope. The event value is meant to be a dot-
-		// delimited list of routes and sub-routes.
-		param name="url.event" type="string" default="";
-
-		// Define the event value in the request. By default, it will
-		// have no values so that they can be overridden with defaults
-		// as the request is processed.
+		// Define the event value in the request. The event determines
+		// how the incoming request will be routed to the various 
+		// controllers and sub-routes. By default, it will have no 
+		// values so that they can be overridden with defaults as the
+		// request is processed.
 		request.event = [];
 
-		// If the event is defined, then let's split it based on the 
-		// dot delimiter.
-		if (len( trim( url.event ) )){
+		// Check to see if the event value has been defined in the URL
+		// scope. If so, we may override the default values. Assuming 
+		// that it will be dot-delimited, we can break it up into an
+		// array for quick reference.
+		if (
+			!isNull( url.event ) &&
+			len( trim( url.event ) )
+			){
 
-			// This will contain at least one routable value.
+			// This will contain at least one routable value (since 
+			// we wouldn't parse it if it was empty).
 			request.event = listToArray( trim( url.event ), "." );
 
 		}
 
-		// Define the template
+		// Define the collection that will be populated specifically
+		// for use within the Views and Layouts. The Controller will
+		// put data in here to be used in the views. The views will
+		// put data in here to be used in the layouts.
+		request.viewData = {};
 
 		// Return true so the page can be processed.
 		return( true );

@@ -22,17 +22,19 @@ be building in a need to create an account for some added complexity and behavio
 Sometimes, in order to learn how to do something, you have to handicap yourself. To help 
 me learn about separation of concerns and modularity and single-responsibility, I am going
 into this learning experiment without a database. All data will be cached within Gateway 
-components for the life-cycle of the application. By doing this, I won't be tempted (or
+components for the life-cycle of the application. By doing this, I won't be tempted (or be
 able) to have database queries in places that they shouldn't be; in other words, I won't be
-able to have gateways that cut across too many tables.
+able to have gateways that cut across too many tables. Nor will I have service objects that
+can mutate data caches that don't really belong to them. 
 
-## All CFSCript In The Controller (C) And Model (M)
+## All CFScript In The Controller (C) And Model (M)
 
 For the past 10 years, I've been living in a tag-based world. This has made it very easy 
-for me to mix my "controller" and my business logic. For this exploration, I'm going to go
-with nothing but CFScript in my Model and my Controller. The intent here is to make it much
-harder to mix the different parts of the application; at least, it makes it harder to mix
-the views and the business logic.
+for me to mix my "controller" and my business logic and my data access. For this exploration,
+I'm going to go with nothing but CFScript in my Model and my Controller, leaving tags to only
+the View layer of the application. The intent here is to make it much harder to mix the 
+different parts of the application; at least, it makes it harder to mix the views and the 
+business logic.
 
 ### What About Reporting?
 
@@ -55,3 +57,7 @@ ToDo application.
 * Delete an existing ToDo item.
 * Add a note to an existing ToDo item.
 * Delete a note from an existing ToDo item.
+
+## Architecture Notes And Random Thoughts
+
+....

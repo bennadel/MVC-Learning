@@ -1,6 +1,7 @@
 
-<!--- Param the layout variables. --->
-<cfparam name="request.title" type="string" default="" />
+<!--- Param the view data for the rendering. --->
+<cfparam name="request.viewData.title" type="string" default="" />
+<cfparam name="request.viewData.primaryContent" type="string" default="" />
 
 
 <!--- Reset the output buffer. --->
@@ -11,16 +12,16 @@
 	<!doctype>
 	<html>
 	<head>
-		<title>#htmlEditFormat( request.title )#</title>
+		<title>#htmlEditFormat( request.viewData.title )#</title>
 	</head>
 	<body>
 
 		<h1>
-			#htmlEditFormat( request.title )#
+			#htmlEditFormat( request.viewData.title )#
 		</h1>
 
 		<!--- Primary content for the layout. --->
-		#request.primaryContent#
+		#request.viewData.primaryContent#
 
 	</body>
 	</html>

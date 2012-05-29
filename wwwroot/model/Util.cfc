@@ -27,13 +27,16 @@ component
 		// Loop over the collection, using the operator to find the
 		// first matching instance.,
 		for (var i = 1 ; i <= length ; i++){
+
+			// Get the current instance from the collection.
+			var currentInstance = collection[ i ];
 			
-			// Check to see if this instance matches.
-			if (operator( collection[ i ], i )){
+			// Check to see if this instance matches the operator.
+			if (operator( currentInstance, i )){
 				
 				// We found a match; return out of the function - we
 				// don't need to continue searching for another match.
-				return( collection[ i ] );
+				return( currentInstance );
 				
 			}
 			

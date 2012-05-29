@@ -49,6 +49,11 @@ component
 	// I authorize the given user (with the given ID).
 	function authorize( Any user ){
 
+		// Get the account with the ID.
+		var account = variables.accountService.getAccount( user.getID() );
+
+		
+
 	}
 
 
