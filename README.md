@@ -60,4 +60,41 @@ ToDo application.
 
 ## Architecture Notes And Random Thoughts
 
-....
+As I am going through this, I thought I would write down some random thoughts about the 
+various aspects of the applicattion.
+
+### Data Gateways And Exceptions
+
+As I'm working on the data access portion of the application stack (data gateways in this
+context), I've been grappling with whether or not to return a collection of entities; or, 
+just to return a given entity. I like the idea of returning a collection, even when the 
+intent is to find a single entity, as it allows me to always return non-NULL values from
+the gateway. If I don't return collections, then I am faced with a decision as to what 
+should be done when a given set of data cannot be found? Should I return NULL? Should I throw
+an exception? 
+
+In the case of ColdFusion, the language itself doesn't have great support for NULL values.
+We now have the isNull() "function"; however, NULL values cannot be passed around. As such,
+it seems like an attempt to return a given value should result in a data-access exception
+if the given value cannot be found.
+
+But, which functions of the data gateway layer should be considered to only load a single
+entity? Getting something based on its unique ID definitely feels like a single-object 
+intent. But what about getting something based on a username and password? This might feel
+like a single-object intent; but, what if you can have inactive users? Who's to say that 
+a given method will only ever return a single value?
+
+Hmmmm....
+
+
+
+
+
+
+
+
+
+
+
+
+

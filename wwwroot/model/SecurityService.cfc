@@ -74,6 +74,7 @@ component
 		user.setId( 0 );
 		user.setName( "" );
 		user.setEmail( "" );
+		user.setLastLogin( "" );
 
 	}
 
@@ -84,7 +85,7 @@ component
 
 		// Return the hashed version of the "salted" password.
 		return(
-			hash( password & "icanh@zsecurity" )
+			hash( password & "icanh@zsecurity!" )
 		);
 
 	}

@@ -20,4 +20,20 @@ component
 	}
 
 
+	// I create a new account with the given properties.
+	function createAccount(
+		String name,
+		String email,
+		String password
+		){
+		// ...
+	}
+
+
+	// I return the account with given credentials.
+	function getAccountWithCredentials( String email, String password ){
+		// ...
+	}
+
+
 }
