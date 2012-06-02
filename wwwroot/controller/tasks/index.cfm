@@ -2,6 +2,7 @@
 <cfscript>
 
 	
+	/*
 	// Check to see if the user is logged-in - only an authorized 
 	// user can access this controller.
 	if (!session.user.isLoggedIn()){
@@ -10,6 +11,7 @@
 		throw( type="Unauthorized" );
 
 	}
+	*/
 
 	
 	// Param the second-level event. This will determine which action
@@ -19,6 +21,14 @@
 
 	// Route the request based on the current event.
 	switch (request.event[ 2 ]){
+
+		case "delete":
+			include "delete.cfm";
+		break;
+
+		case "edit":
+			include "edit.cfm";
+		break;
 
 		case "list":
 			include "list.cfm";

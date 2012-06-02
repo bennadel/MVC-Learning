@@ -7,17 +7,17 @@
 	// Check to see if the form has been submitted.
 	if (form.submitted){
 
-		// Now that the user has created an account, log the user into
-		// the system and then forward them to the homepage.
-		location( url="./index.cfm", addToken="false" );
+		// The user will be sent a "password reset" email with a link
+		// to a page that will collection a new password.
+		location( url="./index.cfm?event=security.passwordResetSent", addToken="false" );
 
 	}
 
 	// Populate the view data for rendering.
-	request.viewData.title = "Create An Account";
+	request.viewData.title = "Forgot Your Password?";
 	
 	// Populate the relevant views and layout.
-	include "/view/security/createAccount.cfm";
+	include "/view/security/forgotPassword.cfm";
 	include "/layout/security.cfm";
 
 </cfscript>

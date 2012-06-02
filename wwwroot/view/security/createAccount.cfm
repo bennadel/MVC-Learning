@@ -1,11 +1,10 @@
 
-
 <!--- Populate the primary content to be used in the layout. --->
 <cfsavecontent variable="request.viewData.primaryContent">
 	<cfoutput>
 
 
-		<form action="./index.cfm?event=security.login" method="post">
+		<form action="./index.cfm?event=security.createAccount" method="post">
 
 			<input type="hidden" name="submitted" value="true" />
 
@@ -20,13 +19,17 @@
 			</p>
 
 			<p>
-				<input type="submit" value="Login" />
+				Re-Type Password: 
+				<input type="password" name="password2" value="" />
 			</p>
 
 			<p>
-				<a href="./index.cfm?event=security.forgotPassword">Forgot your password</a>?	
-				Don't have an account? 
-				<a href="./index.cfm?event=security.createAccount">Create one</a>.
+				<input type="submit" value="Create Account" />
+			</p>
+
+			<p>
+				Already have an account?
+				<a href="./index.cfm?event=security.login">Back to login</a>.
 			</p>
 
 		</form>

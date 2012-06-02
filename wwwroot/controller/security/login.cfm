@@ -1,7 +1,27 @@
 
 <cfscript>
 
+	// Param the form values.
+	param name="form.submitted" type="boolean" default="false";
 
+	// Check to see if the form has been submitted.
+	if (form.submitted){
+
+		// Now that the user is authenticated, forward the user to
+		// the homepage.
+		location( url="./index.cfm", addToken="false" );
+
+	}
+
+	// Populate the view data for rendering.
+	request.viewData.title = "Please Login";
+	
+	// Populate the relevant views and layout.
+	include "/view/security/login.cfm";
+	include "/layout/security.cfm";
+
+
+	/*
 	// Param the form values.
 	param name="form.submitted" type="boolean" default="false";
 	param name="form.email" type="string" default="";
@@ -47,6 +67,6 @@
 	// Include the view and the layout.
 	include "/view/security/login.cfm";
 	include "/layout/security.cfm";
-
+	*/
 
 </cfscript>

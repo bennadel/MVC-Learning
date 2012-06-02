@@ -25,8 +25,6 @@
 
 			// The provided event could not be matched.
 			default:
-				writeDump( request );
-				abort;
 				throw( type="InvalidEvent" );
 			break;
 

@@ -13,6 +13,10 @@
 			include "createAccount.cfm";
 		break;
 
+		case "forgotPassword":
+			include "forgotPassword.cfm";
+		break;
+
 		case "login":
 			include "login.cfm";
 		break;
@@ -21,11 +25,17 @@
 			include "logout.cfm";
 		break;
 
+		case "passwordResetSent":
+			include "passwordResetSent.cfm";
+		break;
+
+		case "resetPassword":
+			include "resetPassword.cfm";
+		break;
+
 		// The provided event could not be matched.
 		default:
-
 			throw( type="InvalidEvent" );
-
 		break;
 
 	}
