@@ -1,0 +1,36 @@
+
+body {
+	background-color: #F0F0F0 ;
+	margin: 0px 0px 100px 0px ;
+	padding: 0px 0px 0px 0px ;
+	}
+
+div.l-siteWrapper {
+	margin: 0px auto 0px auto ;
+	width: 500px ;
+	}
+
+div.l-siteContainerTop {
+	background-color: #333333 ;
+	font-size: 1px ;
+	height: 5px ;
+	overflow: hidden ;
+	}
+
+div.l-siteContainer {
+	background-color: #FFFFFF ;
+	border: 1px solid #CCCCCC ;
+	border-top-width: 0px ;	
+	}
+
+div.l-siteHeader {
+	padding: 20px 20px 20px 20px ;
+	}
+
+div.l-siteBody {
+	padding: 20px 20px 20px 20px ;
+	}
+
+div.l-siteOutro {
+	padding: 25px 21px 0px 21px ;
+	}

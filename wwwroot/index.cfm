@@ -15,12 +15,16 @@
 		// Route the request based on the current event.
 		switch (request.event[ 1 ]){
 
+			case "account":
+				include "/controllers/account/index.cfm";
+			break;
+
 			case "security":
-				include "/controller/security/index.cfm";
+				include "/controllers/security/index.cfm";
 			break;
 
 			case "tasks":
-				include "/controller/tasks/index.cfm";
+				include "/controllers/tasks/index.cfm";
 			break;
 
 			// The provided event could not be matched.

@@ -21,37 +21,14 @@ component
 	// Map our various MVC folder paths. The Model directory will be 
 	// for CFC instantiation; the other two - View and Controller - 
 	// will be simple CFM (templates) at this time.
-	this.mappings[ "/model" ] = (this.baseDirectory & "model/");
-	this.mappings[ "/view" ] = (this.baseDirectory & "view/");
-	this.mappings[ "/controller" ] = (this.baseDirectory & "controller/");
-	this.mappings[ "/layout" ] = (this.baseDirectory & "layout/");
+	this.mappings[ "/models" ] = (this.baseDirectory & "models/");
+	this.mappings[ "/views" ] = (this.baseDirectory & "views/");
+	this.mappings[ "/controllers" ] = (this.baseDirectory & "controllers/");
+	this.mappings[ "/layouts" ] = (this.baseDirectory & "layouts/");
 	
 	
 	// I initialize the application.
 	function onApplicationStart(){
-		
-		// Create our utility instance. This provides extra processing
-		// utilities; and, since our "persistance" layer is going to
-		// be in-memory, we'll need some additional utilities for working
-		// with complex data structures.
-		var util = new Model.Util();
-		
-		// Create our gateways. These will create the actual data 
-		// persistance layer. All data access and mutation should pass
-		// through this layer and nothing else in the application will
-		// know how data is actually being stored.
-		// 
-		// NOTE: No gateway should ever have a reference to another 
-		// gateway. Gateways should only worry about their data and 
-		// their persistence. 
-		application.accountGateway = new model.AccountGateway( util ); 
-		
-		// Create our services. These will use the gateways to save 
-		// and access data. While services can have references to 
-		// other services, each service may only talk to its own 
-		// gateway.
-		application.accountService = new model.AccountService( util, application.accountGateway );
-		application.securityService = new model.SecurityService( util, application.accountService );
 
 		// Return true so the application can be processed.
 		return( true );
@@ -62,8 +39,7 @@ component
 	// I initialize the user's web session.
 	function onSessionStart(){
 		
-		// Create a default, authorized user.
-		session.user = application.securityService.createUser();
+		// ...
 
 	}
 	
