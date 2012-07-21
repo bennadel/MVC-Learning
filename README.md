@@ -17,6 +17,37 @@ enough to build, yet complex enough to teach some theory. I'll be trying to buil
 app using Model-View-Controller. While the app will only be used by a single person, I'll 
 be building in a need to create an account for some added complexity and behavioral concerns.
 
+## Interface-Drive Architecture
+
+At first, I was tempted to jump right into the code and start playing around. And, if you 
+look at my GitHub history, you'll see that's exactly what I did. But, not knowing what the
+app was going to do, I felt completely frustrated and mentally blocked. So, yesterday, I 
+went and actually created a lo-fidelity wireframe with [InVision](http://www.invisionapp.com "Prototypes made beautiful."):
+
+https://projects.invisionapp.com/share/3X4T1X59
+
+It has one basic layout; but, several different areas of concern.
+
+## User Cases
+
+The wonderful thing about having a wireframe is that you have a clear and obvious outline
+of basic user cases. The following outlines the actions that the user will be able to 
+perform in the ToDo application based on the [wireframe](https://projects.invisionapp.com/share/3X4T1X59) above.
+
+* Login.
+* Request password reset.
+* Reset password.
+* Create a new account.
+* Add new task.
+* View existing tasks.
+* View task detail.
+* Update task.
+* Delete task.
+* Mark task as complete.
+* View profile.
+* Update profile.
+* Logout.
+
 ## No Database
 
 Sometimes, in order to learn how to do something, you have to handicap yourself. To help 
@@ -43,20 +74,6 @@ of data. Reporting is a good example of this. I wouldn't necessarily want my pri
 gateways to be used for reporting; rather, I'd probably want a reporting gateway that can
 flatten, denormalize, and optimize queries for a particular outcome. In this app, however,
 there is no reporting - the point is to learn about tiered application architecture.
-
-## User Cases
-
-The following outlines a number of actions that the user will be able to perform in the 
-ToDo application.
-
-* Create a new account.
-* Log into an existing account.
-* Log out of an existing account session.
-* Add a new ToDo item.
-* Edit an existing ToDo item.
-* Delete an existing ToDo item.
-* Add a note to an existing ToDo item.
-* Delete a note from an existing ToDo item.
 
 ## Architecture Notes And Random Thoughts
 
