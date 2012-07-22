@@ -1,7 +1,7 @@
 
 <!--- Param the view data for the layout rendering. --->
 <cfparam name="request.viewData.title" type="string" default="" />
-<cfparam name="request.viewData.cssFile" type="string" default="security.css" />
+<cfparam name="request.viewData.cssFile" type="string" default="standard.css" />
 <cfparam name="request.viewData.activeNavItem" type="string" default="" />
 <cfparam name="request.viewData.body" type="string" default="" />
 
@@ -11,7 +11,7 @@
 	<cfoutput>
 
 
-		<ul class="siteNavigation">
+		<ul class="m-siteNavigation">
 			<li class="navItem <cfif (request.viewData.activeNavItem eq "tasks")>activeNavItem</cfif>">
 				<a href="./index.cfm?event=tasks">Tasks</a>
 			</li>

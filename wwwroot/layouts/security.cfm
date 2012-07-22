@@ -11,7 +11,7 @@
 	<cfoutput>
 
 
-		<ul class="siteNavigation">
+		<ul class="m-siteNavigation">
 			<li class="navItem <cfif (request.viewData.activeNavItem eq "signIn")>activeNavItem</cfif>">
 				<a href="./index.cfm?event=security.login">Sign In</a>
 			</li>

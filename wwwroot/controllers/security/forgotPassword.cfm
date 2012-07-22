@@ -9,7 +9,7 @@
 
 		// The user will be sent a "password reset" email with a link
 		// to a page that will collection a new password.
-		location( url="./index.cfm?event=security.passwordResetSent", addToken="false" );
+		location( url="./index.cfm?event=security.login", addToken="false" );
 
 	}
 

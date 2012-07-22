@@ -4,73 +4,76 @@
 	<cfoutput>
 
 
-		<p>
-			You Have 2 Tasks
-		</p>
+		<h1>
+			You Have 3 Open Tasks
+		</h1>
 
-		<table border="1" cellpadding="10" cellspacing="2">
-			<thead>
-				<tr>
-					<th>
-						Task
-					</th>
-					<th>
-						Comments
-					</th>
-					<th>
-						Due Date
-					</th>
-					<th>
-						Actions
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						Make dinner plans with David.
-					</td>
-					<td>
-						2
-					</td>
-					<td>
-						Today
-					</td>
-					<td>
-						<a href="./index.cfm?event=tasks.edit">Edit</a> -
-						<a href="./index.cfm?event=tasks.delete">Delete</a>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Feed cats.
-					</td>
-					<td>
-						0
-					</td>
-					<td>
-						Tomorrow
-					</td>
-					<td>
-						<a href="./index.cfm?event=tasks.edit">Edit</a> -
-						<a href="./index.cfm?event=tasks.delete">Delete</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<form method="post" action="#cgi.script_name#" class="m-taskList">
 
+			<ol class="tasks">
 
-		<h3>
-			Create New Task
-		</h3>
+				<li class="task">
 
-		<form action="./index.cfm?event=tasks.add" method="post">
+					<input type="checkbox" name="isComplete" value="0" class="isComplete" />
 
-			<p>
-				<input type="text" name="description" value="" size="50" />
-				<input type="submit" value="Add Task" />
-			</p>
-			
+					<a href="./index.cfm?event=tasks.edit" class="view">
+						<span class="description">This is a task</span>
+						<span class="arrow">&raquo;</span>
+					</a>
+
+				</li>
+
+				<li class="task">
+
+					<input type="checkbox" name="isComplete" value="0" class="isComplete" />
+
+					<a href="./index.cfm?event=tasks.edit" class="view">
+						<span class="description">This is another task</span>
+						<span class="arrow">&raquo;</span>
+					</a>
+
+				</li>
+
+				<li class="task">
+
+					<input type="checkbox" name="isComplete" value="0" class="isComplete" />
+
+					<a href="./index.cfm?event=tasks.edit" class="view">
+						<span class="description">This is a task with a really long description of what needs to be done</span>
+						<span class="arrow">&raquo;</span>
+					</a>
+
+				</li>
+
+			</ol>
+
+		</form>
+
+		
+		<form method="post" action="" class="m-form">
+
+			<div class="entries">
+
+				<div class="entry stackedEntry">
+					
+					<label>
+						Add New Task:
+					</label>
+
+					<input type="text" name="description" value="" class="block fullWidth" />
+
+				</div>
+
+			</div>
+
+			<div class="buttons">
+
+				<button type="submit" class="primary">
+					Add Task
+				</button>
+
+			</div>
+
 		</form>
 
 

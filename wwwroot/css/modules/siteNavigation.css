@@ -1,5 +1,5 @@
 
-ul.siteNavigation {
+ul.m-siteNavigation {
 	background-color: #CCCCCC ;
 	font-size: 16px ;
 	height: 35px ;
@@ -10,21 +10,21 @@ ul.siteNavigation {
 	padding: 0px 0px 0px 0px ;
 	}
 
-ul.siteNavigation li.navItem {
+ul.m-siteNavigation li.navItem {
 	float: left ;
 	}
 
-ul.siteNavigation li.rightNavItem {
+ul.m-siteNavigation li.rightNavItem {
 	float: right ;
 	}
 
-ul.siteNavigation a {
+ul.m-siteNavigation a {
 	display: block ;
 	padding: 0px 20px 0px 20px ;
 	text-decoration: none ;
 	}
 
-ul.siteNavigation li.activeNavItem a {
+ul.m-siteNavigation li.activeNavItem a {
 	background-color: #333333 ;
 	color: #FFFFFF ;
 	}

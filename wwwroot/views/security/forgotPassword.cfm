@@ -4,31 +4,47 @@
 	<cfoutput>
 
 
+		<h1>
+			Forgot Your Passowrd?
+		</h1>
+
 		<p>
-			Since your password has been stored in a one-way, encrypted format, 
-			we cannot tell you what your password was; but, we can let you reset
-			it. Please enter your email:
+			Enter your email address below and we'll send you a reset-password confirmation.
 		</p>
 
-		<form action="./index.cfm?event=security.forgotPassword" method="post">
+		<form action="./index.cfm?event=security.forgotPassword" method="post" class="m-form">
 
 			<input type="hidden" name="submitted" value="true" />
 
-			<p>
-				Email: 
-				<input type="text" name="email" value="ben@bennadel.com" />
-			</p>
 
-			<p>
-				<input type="submit" value="Reset Password" />
-			</p>
+			<div class="formEntires">
 
-			<p>
-				Already have an account?
-				<a href="./index.cfm?event=security.login">Back to login</a>.
-			</p>
+				<div class="entry stackedEntry">
+
+					<label>
+						Email: 
+					</label>
+					
+					<input type="text" name="email" value="" class="block fullWidth" />
+
+				</div>
+
+			</div>
+
+			<div class="buttons">
+
+				<button type="submit" class="primary">
+					Reset Password
+				</button>
+
+			</div>
 
 		</form>
+
+		<p>
+			Oops, take me 
+			<a href="./index.cfm?event=security.login">back to the login form</a>.
+		</p>
 
 
 	</cfoutput>

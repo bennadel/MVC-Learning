@@ -3,6 +3,7 @@
 <cfparam name="request.viewData.title" type="string" default="" />
 <cfparam name="request.viewData.cssFile" type="string" default="" />
 <cfparam name="request.viewData.navigationBody" type="string" default="" />
+<cfparam name="request.viewData.alertBody" type="string" default="" />
 <cfparam name="request.viewData.body" type="string" default="" />
 
 
@@ -40,7 +41,7 @@
 				<div class="l-siteHeader">
 
 
-					<a href="./index.cfm" class="siteTitle">
+					<a href="./index.cfm" class="m-siteTitle">
 						<span class="primary">My Tasks</span>
 						<span class="secondary">An MVC Learning Project</span>
 					</a>
@@ -64,6 +65,17 @@
 				<div class="l-siteBody">
 
 
+					<!-- BEGIN: Site Alert. -->
+					<cfif len( request.viewData.alertBody )>
+
+						<div class="m-siteAlert">
+							#request.viewData.alertBody#
+						</div>
+
+					</cfif>
+					<!-- END: Site Alert. -->
+
+
 					<!--- Include the primary body content. --->
 					#request.viewData.body#
 
@@ -79,7 +91,7 @@
 
 
 				<!-- BEGIN: Site Explanation. -->
-				<div class="siteExplanation">
+				<div class="m-siteExplanation">
 
 					<h4>
 						Really &mdash; Another Task App?

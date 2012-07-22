@@ -1,0 +1,95 @@
+
+form.m-form {
+	margin-bottom: 30px ;
+	}
+
+form.m-form input {
+	font-size: 18px ;
+	padding: 7px 0px 7px 0px ;
+	text-indent: 8px ;
+	vertical-align: middle ;
+	}
+
+form.m-form select {
+	font-size: 20px ;
+	vertical-align: middle ;
+	}
+
+form.m-form div.entries {}
+
+form.m-form div.entry {
+	margin-bottom: 20px ;
+	}
+
+form.m-form div.stackedEntry {}
+
+form.m-form div.stackedEntry label {
+	display: block ;
+	font-size: 18px ;
+	font-weight: bold ;
+	line-height: 23px ;
+	margin: 0px 0px 3px 0px ;
+	}
+
+form.m-form div.stackedEntry label span.explanation {
+	font-weight: 400 ;
+	}
+
+form.m-form div.stackedEntry input.block {
+	display: block ;
+	}
+
+form.m-form div.stackedEntry input.fullWidth {
+	width: 95% ;
+	}
+
+form.m-form div.stackedEntry div.note {
+	font-size: 13px ;
+	line-height: 16px ;
+	margin-top: 7px ;
+	}
+
+form.m-form div.lazyEntry {
+	display: none ;
+	}
+
+form.m-form div.lazyLoader {
+	margin: 0px 0px 20px 0px ;
+	}
+
+form.m-form div.lazyLoader a {
+	color: #999999 ;
+	}
+
+form.m-form div.relatedFields {}
+
+form.m-form div.relatedFields span.midText {
+	display: inline-block ;
+	padding-left: 5px ;
+	padding-right: 5px ;
+	}
+
+form.m-form div.relatedFields span.endText {
+	display: inline-block ;
+	padding-left: 5px ;
+	}
+
+form.m-form div.buttons {
+	margin-top: 30px ;
+	}
+
+form.m-form div.buttons button {
+	background-color: #666666 ;
+	border: none ;
+	color: #FFFFFF ;
+	cursor: pointer ;
+	display: inline-block ;
+	font-size: 20px ;
+	font-weight: 100 ;
+	margin-right: 15px ;
+	padding: 10px 20px 10px 20px ;
+	}
+
+form.m-form div.buttons button.primary {
+	background-color: #333333 ;
+	}

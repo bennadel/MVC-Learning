@@ -1,9 +1,27 @@
 
+/* Base styles for this layout. */
+
 body {
 	background-color: #F0F0F0 ;
 	margin: 0px 0px 100px 0px ;
 	padding: 0px 0px 0px 0px ;
 	}
+
+h1 {
+	border-bottom: 1px solid #CCCCCC ;
+	font-size: 22px ;
+	font-weight: 400 ;
+	line-height: 27px ;
+	margin: 10px 0px 30px 0px ;
+	}
+
+input {
+	border: 1px solid #999999 ;
+	}
+
+
+
+/* Layout definition. */
 
 div.l-siteWrapper {
 	margin: 0px auto 0px auto ;

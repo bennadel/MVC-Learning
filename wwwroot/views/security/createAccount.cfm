@@ -4,35 +4,63 @@
 	<cfoutput>
 
 
-		<form action="./index.cfm?event=security.createAccount" method="post">
+		<h1>
+			Create An Account
+		</h1>
+
+		<form action="./index.cfm?event=security.createAccount" method="post" class="m-form">
 
 			<input type="hidden" name="submitted" value="true" />
 
-			<p>
-				Email: 
-				<input type="text" name="email" value="ben@bennadel.com" />
-			</p>
 
-			<p>
-				Password: 
-				<input type="password" name="password" value="" />
-			</p>
+			<div class="formEntries">
 
-			<p>
-				Re-Type Password: 
-				<input type="password" name="password2" value="" />
-			</p>
+				<div class="entry stackedEntry">
 
-			<p>
-				<input type="submit" value="Create Account" />
-			</p>
+					<label>
+						Name:
+					</label>
 
-			<p>
-				Already have an account?
-				<a href="./index.cfm?event=security.login">Back to login</a>.
-			</p>
+					<input type="text" name="name" value="" class="block fullWidth" />
+
+				</div>
+
+				<div class="entry stackedEntry">
+
+					<label>
+						Email <span class="explanation">( your login )</span>:
+					</label>
+
+					<input type="text" name="email" value="" class="block fullWidth" />
+
+				</div>
+
+				<div class="entry stackedEntry">
+
+					<label>
+						Password:	
+					</label>
+
+					<input type="password" name="password" value="" class="block fullWidth" />
+
+				</div>
+
+			</div>
+
+			<div class="buttons">
+
+				<button type="submit" class="primary">
+					Create Account &amp; Sign In
+				</button>
+
+			</div>
 
 		</form>
+
+		<p>
+			Already have an account?
+			<a href="./index.cfm?event=security.login">Back to login</a>.
+		</p>
 
 
 	</cfoutput>
