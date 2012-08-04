@@ -69,7 +69,7 @@ component
 	// I determine if the task has a note attached to it.
 	function hasNote(){
 
-		return( len( this.getNote() ) );
+		return( len( this.getNote() ) != 0 );
 
 	}
 
