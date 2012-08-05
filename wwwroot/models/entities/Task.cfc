@@ -149,24 +149,4 @@ component
 	}
 
 
-	// I set the ID property.
-	function setID( Numeric id ){
-
-		// Validate id.
-		if (id == 0){
-
-			throw(
-				type = "InvalidArgument",
-				message = "ID must be non-zero." 
-			);
-
-		}
-
-		variables.id = id;
-
-		// Return this object reference for method chaining.
-		return( this );
-
-	}
-
 }
