@@ -6,6 +6,7 @@
 
 	// Add the test sepcification for our Task model.
 	testSuite.addAll( "specs.TaskTest" );
+	testSuite.addAll( "specs.AccountTest" );
 
 	// Run the tests that have been added to the test suite. This 
 	// will include all of the methods in the test specifications.
