@@ -103,7 +103,17 @@ a given method will only ever return a single value?
 
 Hmmmm....
 
+## Test-Driven Development (TDD)
 
+I've never actually done anything with Unit Tests before. That's because I've never really
+organized things into proper "units" of work. For this learning project, I am going to try
+my hand at doing some test-driven development. First, on the server-side with MXUnit; and 
+then, on the client-side with Jasmine. 
+
+For the first tests, I actually created my Model first (Task.cfc and Account.cfc) since I
+wasn't even sure what I wanted them to do - this is all so new for me. As such, I created
+my two test specifications (for them) as an afterthought. Hopefully, going forward, I'll
+try to start with my tests FIRST, and then move onto my green+refactoring steps second.
 
 
 
